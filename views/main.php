@@ -195,24 +195,24 @@
 					</p>
 				</div>
 				<div class="third-box">
-					<h3>1880+</h3>
+					<h3>56</h3>
 					<p>
-						Projects completed by our team <br>
-						of web designers and developers
+						Experts in web design, branding, <br>
+						and digital marketing solutions.
 					</p>
 				</div>
 				<div class="third-box">
-					<h3>1880+</h3>
+					<h3>2000+</h3>
 					<p>
-						Projects completed by our team <br>
-						of web designers and developers
+						Customers who were satisfied <br>
+						with our work.
 					</p>
 				</div>
 				<div class="third-box">
-					<h3>1880+</h3>
+					<h3>100%</h3>
 					<p>
-						Projects completed by our team <br>
-						of web designers and developers
+						Positive reviews sent by our first- <br>
+						time and regular customers.
 					</p>
 				</div>
 			</div>
@@ -232,4 +232,18 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="third-bars bar-one"></div>
+	<div class="third-bars bar-two"></div>
+	<div class="third-bars bar-three"></div>
 </section>
+
+<!-- 회원가입 -->
+<section id="main-register">
+
+</section>
+
+<!-- 로그인 -->
+<section id="main-login">
+	
+</section>			

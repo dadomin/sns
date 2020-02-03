@@ -1,0 +1,237 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*font-family: 'Noto Sans KR', sans-serif;*/
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+::selection {
+	color: #fff;
+	background: #1fde82;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.size {
+	width: 1200px;
+	height: 100%;
+	position: relative;
+	display: block;
+	margin: 0 auto;;
+}
+/* 헤더설정 */
+header {
+	width: 100%;
+	height: 70px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.08);
+	z-index: 900;
+	background-color: #fff;
+}
+
+header > .size {
+	position: relative;
+}
+header > .size > a{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+header > .size > a > img {
+	height: 45px;
+	margin-right: 7px;
+}
+.right-menu {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#main-menu {
+	float: left;
+	margin-right: 20px;
+}
+#main-menu > li {
+	float: left;
+	height: 28px;
+	margin: 0 16px;
+	color: #5d6678;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: 100;
+	position: relative;
+	overflow: hidden;
+}
+#main-menu > li > span {
+	width: 100%;
+	height: 1px;
+	background-color: #5d6678;
+	position: absolute;
+	bottom: 0;
+	left: -100%;
+}
+#main-menu > li:hover > span {
+	animation-duration: 0.5s;
+	animation-name: menu-slide;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.login { 
+	width: 120px;
+	height: 40px;
+	color: #5d6678;
+	background-color: transparent;
+	border: 1px solid #dcdfe5;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 900;
+	cursor: pointer;
+	transition: 0.25s;
+}
+.rigth-menu > .login {
+	float: left;
+}
+.login:hover {
+	background-color: #1fde82;
+	border-color: #1fde82;
+	color: #fff;
+}
+
+@keyframes menu-slide {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+/* 푸터 설정 */
+footer {
+    width: 100%;
+    height: 480px;
+    background-color: #fff;
+}
+.footer-upper {
+    width: 100%;
+    height: 430px;
+    display: flex;
+    flex-direction: row;
+    padding: 60px 0;
+}
+.footer-upper > .footer-div {
+    flex: 1;
+}
+.footer-div > a {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.footer-div > a > img {
+    height: 50px;
+    margin-right: 7px;
+}
+.footer-div > p {
+    color: #5d6678;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: .25s;
+    cursor: pointer;
+}
+.footer-div > p > .green {
+    color: #1fde82;
+    font-weight: bold;
+    cursor: text;
+}
+.footer-div > p:hover {
+    color: #1fde82;
+}
+.footer-div > h3 {
+    font-size: 22px;
+    color: #5d6678;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.footer-div > span {
+    color: #5d6678;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.footer-btns {
+    margin-top: 30px;
+}
+.footer-btn {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border: 1px solid #adb6c7;
+    color: #adb6c7;
+    transition: .25s;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    margin-right: 5px;
+}
+.footer-btn:hover {
+    color: #fff;
+    border-color: #1fde82;
+    background-color: #1fde82;
+}
+.footer-under {
+    width: 100%;
+    height: 50px;
+}
+.footer-under > span {
+    float: left;
+    font-size: 12px;
+    color: #5d6678;
+}
+.footer-under > ul {
+    float: right;
+}
+.footer-under > ul > li  {
+    float: left;
+    margin-left: 30px;
+}
+.footer-under > ul > li > a {
+    font-size: 12px;
+    color: #5d6678;
+    transition: .25s;
+}
+.footer-under > ul > li > a:hover {
+    color: #1fde82;
+}

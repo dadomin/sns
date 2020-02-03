@@ -1,141 +1,4 @@
-@charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	/*font-family: 'Noto Sans KR', sans-serif;*/
-	font-family: 'Nanum Gothic', sans-serif;
-}
-
-::selection {
-	color: #fff;
-	background: #1fde82;
-}
-
-ul, li {
-	list-style: none;
-}
-
-a {
-	text-decoration: none;
-	color: #000;
-}
-
-body {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow-x: hidden;
-}
-
-.size {
-	width: 1200px;
-	height: 100%;
-	position: relative;
-	display: block;
-	margin: 0 auto;;
-}
-
-/* 헤더설정 */
-header {
-	width: 100%;
-	height: 70px;
-	position: sticky;
-	top: 0;
-	left: 0;
-	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.08);
-	z-index: 900;
-	background-color: #fff;
-}
-
-header > .size {
-	position: relative;
-}
-header > .size > a{
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translateY(-50%);
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	font-size: 24px;
-	font-weight: bold;
-}
-header > .size > a > img {
-	height: 45px;
-	margin-right: 7px;
-}
-.right-menu {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	transform: translateY(-50%);
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-#main-menu {
-	float: left;
-	margin-right: 20px;
-}
-#main-menu > li {
-	float: left;
-	height: 28px;
-	margin: 0 16px;
-	color: #5d6678;
-	font-size: 16px;
-	cursor: pointer;
-	font-weight: 100;
-	position: relative;
-	overflow: hidden;
-}
-#main-menu > li > span {
-	width: 100%;
-	height: 1px;
-	background-color: #5d6678;
-	position: absolute;
-	bottom: 0;
-	left: -100%;
-}
-#main-menu > li:hover > span {
-	animation-duration: 0.5s;
-	animation-name: menu-slide;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-.login { 
-	width: 120px;
-	height: 40px;
-	color: #5d6678;
-	background-color: transparent;
-	border: 1px solid #dcdfe5;
-	border-radius: 4px;
-	font-size: 16px;
-	font-weight: 900;
-	cursor: pointer;
-	transition: 0.25s;
-}
-.rigth-menu > .login {
-	float: left;
-}
-.login:hover {
-	background-color: #1fde82;
-	border-color: #1fde82;
-	color: #fff;
-}
-
-@keyframes menu-slide {
-	0% {
-		left: -100%;
-	}
-	100% {
-		left: 0;
-	}
-}
 
 /*메인-비쥬얼*/
 #visual {
@@ -332,4 +195,101 @@ header > .size > a > img {
 	left: 50%;
 	bottom: -150px;
 	transform: translateX(-50%);
+}
+
+/* 메인 - 파란박스 설명란 */
+#main-third {
+	width: 100%;
+	height: 640px;
+	background-color: #2570ff;
+	padding: 90px 0;
+	position: relative;
+}
+.third-div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.third-div > div {
+	flex: 1;
+}
+.third-boxes {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.third-box {
+	width: 275px;
+	height: 220px;
+	background-color: rgba(255,255,255,.2);
+	padding: 40px 30px;
+	border-radius: 10px;
+	color: #fff;
+	margin-bottom: 30px;
+}
+.third-box > h3 {
+	font-size: 58px;
+	margin-bottom: 20px;
+}
+.third-box > p {
+	font-size: 14px;
+	color: #f2f5fc;
+	line-height: 1.8;
+}
+.third-sub {
+	color: #fff;
+	padding-top: 80px;
+	/* padding-left: 50px; */
+}
+.third-sub > * {
+	margin-left: 50px;
+}
+.third-sub > h3 {
+	font-size: 42px;
+	font-weight: 100;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+.third-sub > p {
+	color: #f2f5fc;
+	font-size: 14px;
+	line-height: 1.8;	
+	margin-bottom: 30px;
+}
+.third-sub > button {
+	background-color:rgba(255,255,255,0);
+	border: 1px solid #fff;
+	border-radius: 4px;
+	padding: 11px 20px;
+	color: #fff;
+	cursor: pointer;
+	transition: ease-in-out .25s;
+	font-weight: bold;
+}
+.third-sub > button:hover {
+	color: #2570ff;
+	background-color: #fff;
+}
+
+.third-bars {
+	position: absolute;
+	background-color: rgba(255,255,255,.15);
+	border-radius: 20px;
+	height: 38px;
+}
+.third-bars.bar-one {
+	width: 130px;
+	top: 18%;
+	right: -15px;
+}
+.third-bars.bar-two {
+	width: 100px;
+	right: 100px;
+	top: 28%;
+}
+.third-bars.bar-three {
+	width: 80px;
+	bottom: 18%;
+	right: 40px;
 }
