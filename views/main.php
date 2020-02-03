@@ -245,5 +245,18 @@
 
 <!-- 로그인 -->
 <section id="main-login">
-	
+	<div class="size">
+		<div class="home-div">
+			<div class="home-img">
+				<img src="./img/register.png" alt="register">
+			</div>
+			<form action="/">
+				<h3>
+					Get in touch with <br>
+					out team
+				</h3>
+				<input type="text" placeholder="Your Name">
+			</form>
+		</div>
+	</div>
 </section>			
