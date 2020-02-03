@@ -10,6 +10,11 @@
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
+::selection {
+	color: #fff;
+	background: #1fde82;
+}
+
 ul, li {
 	list-style: none;
 }
@@ -23,6 +28,7 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 .size {
@@ -111,6 +117,7 @@ header > .size > a > img {
 	font-size: 16px;
 	font-weight: 900;
 	cursor: pointer;
+	transition: 0.25s;
 }
 .rigth-menu > .login {
 	float: left;
@@ -119,7 +126,6 @@ header > .size > a > img {
 	background-color: #1fde82;
 	border-color: #1fde82;
 	color: #fff;
-	transition: 0.25s;
 }
 
 @keyframes menu-slide {
@@ -142,8 +148,8 @@ header > .size > a > img {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 50px 0; 
-
+	padding: 50px 0;
+	width: 100%;
 }
 .home-div > div {
 	flex: 1;
@@ -152,19 +158,24 @@ header > .size > a > img {
 	padding-top: 100px;
 }
 .home-sub > h3 {
-	font-size: 53px;
+	font-size: 42px;
 	color: #1d273b;
-	font-weight: 300;
-	line-height: 1.2;
+	font-weight: 100;
+	line-height: 1.4;
 	margin-bottom: 20px;
+}
+.home-sub > .firsth {
+	font-size: 58px;
 }
 .home-sub > p {
 	color: #5d6678;
 	font-size: 14px;
 	margin-bottom: 30px;
+	line-height: 1.8;
 }
 .home-img > img {
 	width: 90%;
+	display:block;
 }
 .goregi {
 	color: #fff;
@@ -177,9 +188,9 @@ header > .size > a > img {
 	font-weight: bold;
 	cursor: pointer;
 	margin-right: 16px;
+	transition: 0.25s;
 }
 .goregi:hover {
-	transition: 0.25s;
 	background-color: #2570ff;
 	box-shadow: 0 8px 32px rgba(37,112,255,.46);
 }
@@ -188,6 +199,7 @@ header > .size > a > img {
 	font-weight: bold;
 	position: relative;
 	color: #5d6678;
+	transition: .25s;
 }
 .home-sub > a > span {
 	font-size: 12px;
@@ -200,13 +212,12 @@ header > .size > a > img {
 	display: inline-block;
 	text-align: center;
 	line-height: 3.2;
+	transition: .25s;
 }
 .home-sub > a:hover {
-	transition: .25s;
 	color: #2570ff;
 }
 .home-sub > a:hover > span {
-	transition: .25s;
 	border-color: #2570ff;
 }
 .home-bar {
@@ -218,4 +229,107 @@ header > .size > a > img {
 	top: 50%;
 	left: -15px;
 	transform: translateY(-50%);
+}
+
+/* 메인-박스설명 */
+#main-first {
+	width: 100%;
+	height: 990px;
+	position: relative;
+}
+#main-first > img {
+	position: absolute;
+	right: -130px;
+	top: 0;
+}
+#main-first > .size > p {
+	color: #1d273b;
+	font-size: 36px;
+	font-weight: 100;
+	line-height: 1.6;
+	margin-bottom: 40px;
+}
+.main-boxes {
+	width: 100%;
+	height: 880px;
+	display: flex;
+	flex-wrap: wrap;
+	min-width: 880px;
+	justify-content: space-between;
+}
+.box {
+	width: 370px;
+	height: 390px;
+	padding: 45px 40px;
+	box-shadow: 0 4px 44px rgba(17,29,48,.06);
+	margin-bottom: 30px;
+	border-radius: 10px;
+	transition: ease-in-out .3s;
+}
+.box:hover {
+	box-shadow: 0 4px 44px rgba(17,29,48,.26); 
+}
+.box-icon {
+	width: 92px;
+	height: 92px;
+	border: none;
+	border-radius: 50%;
+	background-color: #1fde82;
+	font-size: 26px;
+	color: #fff;
+	box-shadow: 0 8px 32px rgba(31,222,130,.46);
+	text-align: center;
+	line-height: 92px;
+	margin-bottom: 40px;
+}
+.box > h3 {
+	font-size: 22px;
+	color: #1d273b;
+	margin-bottom: 16px;
+}
+.box > p {
+	font-size: 14px;
+	color: #5d6678;
+	line-height: 1.8;
+	margin-bottom: 30px;
+}
+.gologin {
+	border: none;
+	background: none;
+	font-size: 13px;
+	font-weight: bold;
+	color: #5d6678;
+	cursor: pointer;
+	transition: ease-in-out .3s;
+}
+.gologin > i {
+	margin-left: 7px;
+}
+.gologin:hover {
+	color: #1fde82;
+}
+
+#main-second {
+	width: 100%;
+	height: 680px;
+	margin: 80px 0; 
+}
+#main-second > .size > .home-div > .home-img {
+	position: relative;
+	background-position: bottom center;
+	background-repeat: none;
+}
+#main-second > .size > .home-div > .home-img > .about-img {
+	width: 423px;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+}
+#main-second > .size > .home-div > .home-img  > .about-bar {
+	width: 670px;
+	position: absolute;
+	left: 50%;
+	bottom: -150px;
+	transform: translateX(-50%);
 }
