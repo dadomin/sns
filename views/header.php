@@ -13,6 +13,17 @@
 <body>
 
 <!-- 
+USER-DB
+1. 인덱스
+2. 아이디
+3. 닉네임
+4. 비밀번호
+5. 생년월일
+6. 성별
+7. 속해있는 밴드
+8. 구독중인 페이지
+9. 프로필사진
+
 
 로그인 전 메인 화면 
 1. 로그인
@@ -56,7 +67,12 @@
 
  -->
 
-
+<?php if(isset($_SESSION['user'])) : ?>
+	<h3>헤더</h3>
+	<form action="/logout" method="POST">
+		<button>logout</button>
+	</form>
+<?php else : ?>
 	<header>
 		<div class="size">
 			<a href="/">
@@ -76,3 +92,4 @@
 			</div>
 		</div>
 	</header>
+<?php endif; ?>

@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="footer-div">
-                    <h3>Out Social Networks</h3>
+                    <h3>Our Social Networks</h3>
                     <span>
                         Join us in the social networks to receive <br>
                         the latest news and updates.

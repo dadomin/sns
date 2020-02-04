@@ -1,3 +1,4 @@
+
 <section id="visual">
 	<div class="size">
 
@@ -240,23 +241,49 @@
 
 <!-- 회원가입 -->
 <section id="main-register">
-
-</section>
-
-<!-- 로그인 -->
-<section id="main-login">
 	<div class="size">
 		<div class="home-div">
 			<div class="home-img">
 				<img src="./img/register.png" alt="register">
 			</div>
-			<form action="/">
-				<h3>
-					Get in touch with <br>
-					out team
-				</h3>
-				<input type="text" placeholder="Your Name">
-			</form>
+
+			<div class="home-img">
+				<form action="/register" method="POST" class="home-register">
+					<h3>
+						Get in touch with <br>
+						our team
+					</h3>
+					
+					<input type="text" placeholder="YOUR NAME" name="name">
+					<input type="text" placeholder="ID" name="id">
+					<input type="password" placeholder="PASSWORD" name="pass">
+					<input type="password" placeholder="PASSWORD CONFIRM" name="cpass">
+
+					<input type="date" name="birth">
+
+					<select name="sex" id="">
+						<option value="0">WOMAN</option>
+						<option value="1">MAN</option>
+					</select>
+
+					<input type="file" placeholder="프로필 사진 업로드">
+
+					<button>DONE</button>
+				</form>
+			</div>
+			
 		</div>
 	</div>
+
+	<img src="./img/bar1.png" alt="register-bar" class="register-bar">
+</section>
+
+<!-- 로그인 -->
+<section id="main-login">
+	<p>Subscribe to our news <br> and regular updates</p>
+	<form action="/login" method="POST" class="home-login">
+		<input type="text" placeholder="YOUR ID" name="id">
+		<input type="password" placeholder="PASSWORD" name="pass">
+		<button>LOGIN</button>
+	</form>
 </section>			
