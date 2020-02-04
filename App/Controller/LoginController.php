@@ -20,9 +20,10 @@ class LoginController extends MasterController {
         $cpass = $_POST['cpass'];
         $birth = $_POST['birth'];
         $sex = $_POST['sex'];
+        $file = $_FILES['file'];
 
         // 비어있는지 체크
-        if($id == "" || $name == "" || $pass == "" || $cpass == "" || $birth== "" || $sex == "") {
+        if($id == "" || $name == "" || $pass == "" || $cpass == "" || $birth== "" || $sex == "" || $file == "") {
             DB::msgAndBack("필수입력란이 비어져있습니다. 모든 항목이 필수 입력란입니다.");
             exit;
         }
@@ -53,9 +54,19 @@ class LoginController extends MasterController {
             DB::msgAndBack("비밀번호와 비밀번호 확인란의 값이 다릅니다.");
             exit;
         }
+        //이미지 파일인지 체크
+        if(explode("/", $file['type'])[0] != "image") {
+            DB::msgAndBack("이미지 파일만 업로드 가능합니다.");
+            exit;
+        }
 
-        $sql3 = "INSERT INTO `sns_user`(`id`,`nick`,`pass`,`birth`,`sex`) VALUES (?, ?, PASSWORD(?), ?, ?)";
-        $cnt3 = DB::query($sql3, [$id, $name, $pass, $birth, $sex]);
+        //파일 옮기기
+        $tmp = $file['tmp_name'];
+        $path = time() . "_" . $file['name'];
+        move_uploaded_file($tmp, $path);
+        
+        $sql3 = "INSERT INTO `sns_user`(`id`,`nick`,`pass`,`birth`,`sex`, `img`) VALUES (?, ?, PASSWORD(?), ?, ?, ?)";
+        $cnt3 = DB::query($sql3, [$id, $name, $pass, $birth, $sex, $path]);
         if(!$cnt3){
             DB::msgAndBack("회원가입 실패");
             exit;

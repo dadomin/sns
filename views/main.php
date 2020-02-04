@@ -248,7 +248,7 @@
 			</div>
 
 			<div class="home-img">
-				<form action="/register" method="POST" class="home-register">
+				<form action="/register" method="POST" class="home-register"  enctype="multipart/form-data">
 					<h3>
 						Get in touch with <br>
 						our team
@@ -266,7 +266,7 @@
 						<option value="1">MAN</option>
 					</select>
 
-					<input type="file" placeholder="프로필 사진 업로드">
+					<input type="file" placeholder="프로필 사진 업로드" name="file" >
 
 					<button>DONE</button>
 				</form>
