@@ -3,7 +3,7 @@
         <div class="size">
             <div class="footer-upper">
                 <div class="footer-div">
-                    <a href="/">
+                    <a href="">
                         <img src="./img/logo.png" alt="logo">
                         LINK U
                     </a>

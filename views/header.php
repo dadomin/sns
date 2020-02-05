@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="/fontawesome/css/all.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/home.css">
+	<link rel="stylesheet" href="/css/profile.css">
 	<script src="/js/jquery-3.3.1.js"></script>
 	<script src="/js/script.js"></script>
 	<title>LINK U</title>
@@ -68,12 +70,65 @@ USER-DB
  -->
 
 <?php if(isset($_SESSION['user'])) : ?>
-	<h3>헤더</h3>
-	<img src="<?= $user->img ?>" alt="">
-	<form action="/logout" method="POST">
-		<button>logout</button>
-	</form>
+
+	<!-- 로그인 후 홈 헤더 -->
+	<div id="header">
+		<div class="size">
+
+			<!-- 로고 -->
+			<a href="/home">
+				<img src="./img/logo.png" alt="logo">
+				LINK U
+			</a>
+
+			<!-- 검색창 -->
+			<div class="search-box">
+				<input type="text" placeholder="밴드, 페이지, 게시글 검색">
+				<button><i class="fas fa-search"></i></button>
+			</div>
+
+			<!-- 오른쪽 메뉴 -->
+			<div id="header-menu">
+				<div><a href="/home">새글 피드</a></div>
+				<div><i class="fas fa-bell"></i></div>
+				<div><i class="fas fa-comment-dots"></i></div>
+				<div class="profile-menu-top">
+					<img src="<?= $user->img ?>" alt="profile" class="profile-img">
+
+					<ul id="profile-menu" class="profile-menu">
+						<li><a href="/profile">내 정보</a></li>
+						<li><a href="/logout">로그아웃</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+		
+		$('html').on("click", (e)=>{
+			if(!$(e.target).hasClass('profile-img') && !$(e.target).hasClass('profile-menu')){
+				if($("#profile-menu").hasClass('db')){
+					$("#profile-menu").removeClass("db");
+				}
+			}
+		});
+
+		
+		$(".profile-img").on("click", ()=>{
+			if($("#profile-menu").hasClass('db')){
+				$("#profile-menu").removeClass("db");
+			}else {
+				$("#profile-menu").addClass("db");
+			}
+		});
+		
+	</script>
+
 <?php else : ?>
+
+	<!-- 로그인 전 메인 헤더 -->
 	<header>
 		<div class="size">
 			<a href="/">
@@ -93,4 +148,5 @@ USER-DB
 			</div>
 		</div>
 	</header>
+
 <?php endif; ?>
