@@ -69,6 +69,7 @@ USER-DB
 
 <?php if(isset($_SESSION['user'])) : ?>
 	<h3>헤더</h3>
+	<img src="<?= $user->img ?>" alt="">
 	<form action="/logout" method="POST">
 		<button>logout</button>
 	</form>

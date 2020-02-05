@@ -62,7 +62,7 @@ class LoginController extends MasterController {
 
         //파일 옮기기
         $tmp = $file['tmp_name'];
-        $path = time() . "_" . $file['name'];
+        $path = './upload/' . time() . "_" . $file['name'];
         move_uploaded_file($tmp, $path);
         
         $sql3 = "INSERT INTO `sns_user`(`id`,`nick`,`pass`,`birth`,`sex`, `img`) VALUES (?, ?, PASSWORD(?), ?, ?, ?)";
@@ -102,7 +102,7 @@ class LoginController extends MasterController {
         }
 
         $_SESSION['user'] = $user;
-        DB::msgAndGo("{$user->nick}님 로그인되었습니다.", "/");
+        DB::msgAndGo("{$user->nick}님 로그인되었습니다.", "/home");
     }
 
     public function logout() 
