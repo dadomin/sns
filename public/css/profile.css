@@ -1,7 +1,125 @@
 /* 프로필(내정보) 설정 css */
-#profile {
+#profile-page {
     width: 100%;
+    height: auto;
     padding-top: 30px;
     padding-bottom: 80px;
     background-color: #eef0f3;
+}
+#profile-page > .size {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 80px;
+}
+
+/* 프로필 - 왼쪽 메뉴 */
+#profile-left-menu {
+    width: 208px;
+    height: auto;
+}
+#profile-left-menu > li {
+    width: 100%;
+    height: 46px;
+    margin-bottom: 1px;
+}
+#profile-left-menu > li > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-left: 20px;
+    line-height: 46px;
+    font-size: 13px;
+    color: #222;
+    font-weight: 400;
+    background-color: #fff;
+    position: relative;
+}
+#profile-left-menu > li > a > i {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+#profile-left-menu > li > a.profile-left-click {
+    font-weight: bold;
+    background-color: #f7f8f9;
+}
+#profile-left-menu > li > a.profile-left-click > i {
+    display: block;
+}
+
+/* 프로필 - 설정 메인 */
+#my-profiles {
+    width: 800px;
+    height: auto;
+}
+#my-profiles > div {
+    background-color: #fff;
+    margin-bottom: 1px;
+    padding: 30px 30px;
+}
+.my-profile-top {
+    height: 50px;
+    font-size: 16px;
+    color: #222;
+    font-weight: bold;
+    line-height: 50px;
+    padding: 0 30px !important;
+}
+.my-profile {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.my-profile-title {
+    flex: 1;
+    font-weight: bold;
+    font-size: 13px;
+    color: #222;   
+}
+.my-profile-sub,
+.my-profile-main {
+    flex: 3;
+}
+.my-profile-main {
+    width: 100%;
+    min-height: 60px;
+    height: auto;
+    position: relative;
+}
+.my-profile-main > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.my-profile-main > img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 50%;
+    left: 0;
+}
+.my-profile-main > p {
+    left: 70px;
+    width: auto;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+.my-profile-main > button  {
+    right: 0;
+}
+.my-profile-sub > div {
+    width: 100%;
+    height: auto;
+    float: left;
+    display: block;
+}
+.my-profile-sub > div > span,p,img {
+    float: left;
+}
+.my-profile-sub > div > button {
+    float: right;
 }

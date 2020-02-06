@@ -23,10 +23,14 @@ class LoginController extends MasterController {
         $file = $_FILES['file'];
 
         // 비어있는지 체크
-        if($id == "" || $name == "" || $pass == "" || $cpass == "" || $birth== "" || $sex == "" || $file == "") {
+        if(trim($id) == "" || trim($name) == "" || trim($pass) == "" || 
+            trim($cpass) == "" || trim($birth)== "" || trim($sex) == "" || trim($file) == "") {
             DB::msgAndBack("필수입력란이 비어져있습니다. 모든 항목이 필수 입력란입니다.");
             exit;
         }
+
+        // 아이디 공백체크
+        // if(trim)
 
         // 회원가입된 회원있는지 체크
         $sql1 = "SELECT COUNT(*) AS cnt FROM `sns_user`";
