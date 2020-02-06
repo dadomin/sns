@@ -16,9 +16,9 @@
                     <p>사용 중인 프로필</p>
                 </div>
                 <div class="my-profile-main">
-                    <img src="<?= $user->img ?>" alt="img">
+                    <img src="<?= $user->img ?>" alt="img" class="closeup-img">
                     <p><?= $user->nick ?></p>
-                    <button>관리</button>
+                    <button class="change-id-img">관리</button>
                 </div>
                 
             </div>
@@ -44,6 +44,60 @@
             </div>
 
         </div>
-        
+            
     </div>
 </section>
+
+<!-- js -->
+<script>
+    $(".closeup-img").on("click", (e)=>{
+        let div = document.createElement("div");
+        div.id = 'pop-up';
+        let temp = `
+            <div class="pop-up-bg">
+                
+            </div>
+            <div class="up">
+                <img src="" class="up-img">
+            </div>
+        `;
+        div.innerHTML = temp;
+        $("body").append(div);
+        div.querySelector('.up-img').src = e.target.src;
+
+        $(".pop-up-bg").on("click", (e)=>{
+            let p = e.target.parentNode;
+            document.querySelector("body").removeChild(p);
+        });
+    });
+    
+    // 아이디&사진 변경관리
+    $(".change-id-img").on("click", ()=>{
+        let div = document.createElement("div");
+        div.id = 'pop-up';
+        let temp = `
+            <div class="pop-up-bg">
+                
+            </div>
+            <form action="/profilechange" method="POST" class="up change-up">
+                <h3>프로필 수정</h3>
+                <img src="<?= $user->img ?>" alt="img">
+                <label for="change-file" class="change-profile-img"><i class="fas fa-camera"></i></label>
+                <input type="file" id="change-file">
+                <input type="text" class="change-profile-name" name="nick">
+                <button>확인</button>
+            </form>
+        `;
+        div.innerHTML = temp;
+
+        $("body").append(div);
+        
+        $(".change-profile-name").val('<?= $user->nick ?>');
+
+        $(".pop-up-bg").on("click", (e)=>{
+            let p = e.target.parentNode;
+            document.querySelector("body").removeChild(p);
+        });
+    })
+
+</script>

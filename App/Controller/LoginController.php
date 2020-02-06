@@ -14,23 +14,22 @@ class LoginController extends MasterController {
             exit;
         }
         
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $pass = $_POST['pass'];
-        $cpass = $_POST['cpass'];
-        $birth = $_POST['birth'];
-        $sex = $_POST['sex'];
+        $id = trim($_POST['id']);
+        $name = trim($_POST['name']);
+        $pass = trim($_POST['pass']);
+        $cpass = trim($_POST['cpass']);
+        $birth = trim($_POST['birth']);
+        $sex = trim($_POST['sex']);
         $file = $_FILES['file'];
 
         // 비어있는지 체크
-        if(trim($id) == "" || trim($name) == "" || trim($pass) == "" || 
-            trim($cpass) == "" || trim($birth)== "" || trim($sex) == "" || trim($file) == "") {
+        if($id == "" || $name == "" || $pass == "" || $cpass == "" || $birth== "" || $sex == "" || $file == "") {
             DB::msgAndBack("필수입력란이 비어져있습니다. 모든 항목이 필수 입력란입니다.");
             exit;
         }
 
         // 아이디 공백체크
-        // if(trim)
+        $id = preg_replace("/\s| /",'',$id);
 
         // 회원가입된 회원있는지 체크
         $sql1 = "SELECT COUNT(*) AS cnt FROM `sns_user`";
@@ -83,10 +82,10 @@ class LoginController extends MasterController {
     public function login()
     {
         // 로그인 되어있는지 체크
-        // if(isset($_SESSION['user'])){
-        //     DB::msgAndBack("로그아웃 후 이용해주시기 바랍니다.");
-        //     exit;
-        // }
+        if(isset($_SESSION['user'])){
+            DB::msgAndBack("로그아웃 후 이용해주시기 바랍니다.");
+            exit;
+        }
 
         $id = $_POST['id'];
         $pass = $_POST['pass'];

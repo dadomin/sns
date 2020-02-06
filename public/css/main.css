@@ -410,6 +410,7 @@
 	text-align: center;
 }
 #main-login > p {
+	width: 100%;
 	color: #1d273b;
 	font-size: 40px;
 	font-weight: 100;
