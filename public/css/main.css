@@ -327,15 +327,44 @@
 	color: #1d273b;
 	margin-bottom: 16px;
 }
-.home-register > input {
+.home-register input {
 	width: 100%;
 	height: 46px;
 	margin: 6px 0;
 	color: #adb6c7;
 	border: 1px solid #dcdfe5;
+	background-color: #fff;
 	border-radius: 4px;
 	outline: none;
 	padding: 10px 20px;
+}
+.home-register > div {
+	width: 100%;
+	height: 46px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.home-register > div > .file-show {
+	width: 78%;
+}
+.home-register > div > label {
+	width: 20%;
+	height: 43px;
+	background-color: #2570ff;
+	color: #fff;
+	border-radius: 4px;
+	display: inline-block;
+	text-align: center;
+	line-height: 43px;
+	cursor: pointer;
+	transition: ease-out .2s;
+}
+.home-register > div > label:hover {
+	box-shadow: 0 8px 32px rgba(37,112,255,.46);
+}
+#file {
+	display: none;
 }
 .home-register > select {
 	width: 100%;

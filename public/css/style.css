@@ -28,7 +28,7 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 }
 
 .size {
@@ -363,4 +363,21 @@ footer {
 }
 .footer-under > ul > li > a:hover {
     color: #1fde82;
+}
+
+/* 위로 올리가기 버튼 */
+.go-up {
+	width: 46px;
+	height: 46px;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	cursor: pointer;
+	background-color: #1fde82;	
+	z-index: 1000;
+	color: #fff;
+	font-size: 20px;
+	border: none; 
+	border-radius: 4px;
+	outline: none;
 }

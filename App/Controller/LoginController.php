@@ -9,10 +9,10 @@ class LoginController extends MasterController {
     public function register()
     {   
         // 로그인 되어있는지 체크
-        // if(isset($_SESSION['user'])){
-        //     DB::msgAndBack("로그아웃 후 이용해주시기 바랍니다.");
-        //     exit;
-        // }
+        if(isset($_SESSION['user'])){
+            DB::msgAndBack("로그아웃 후 이용해주시기 바랍니다.");
+            exit;
+        }
         
         $id = $_POST['id'];
         $name = $_POST['name'];

@@ -53,6 +53,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- 위로 올리기 버튼 -->
+    <button class="go-up"><i class="fas fa-angle-up"></i></button>
+    
+    <!-- 버튼 js -->
+	<script>
+		$(".go-up").on("click", ()=>{
+			$('html, body').animate({scrollTop: 0}, 500, 'swing');	
+		});
+	</script>
     
 </body>
 </html>

@@ -66,7 +66,32 @@ USER-DB
 7. 밴드 안 프로필(이름/사진/상메)
 
 페이지(나중에)
+-->
 
+<!-- sns -->
+<!-- 
+	1. 내 피드
+
+	메인화면
+	1. 내 밴드
+	2. 타임라인(페북)
+
+	밴드별 화면
+
+	인원별화면
+	1. 프로필
+	2. 정보
+	3. 친구
+	4. 사진
+	5. 보관함
+	
+	6. 소개글
+	7. 대표콘텐츠
+	8. 사진, 친구 9개씩 보기
+
+	1) 친구추가
+	2) 친구별(내) 화면
+	3) 친구요청 탭
  -->
 
 <?php if(isset($_SESSION['user'])) : ?>
@@ -89,7 +114,7 @@ USER-DB
 
 			<!-- 오른쪽 메뉴 -->
 			<div id="header-menu">
-				<div><a href="/home">새글 피드</a></div>
+				<div><a href="/home">내 피드</a></div>
 				<div><i class="fas fa-bell"></i></div>
 				<div><i class="fas fa-comment-dots"></i></div>
 				<div class="profile-menu-top">

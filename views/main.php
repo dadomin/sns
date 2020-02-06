@@ -1,4 +1,4 @@
-
+<!-- 비쥬얼 부분 -->
 <section id="visual">
 	<div class="size">
 
@@ -44,6 +44,7 @@
 	<div class="home-bar"></div>
 </section>
 
+<!-- 메인 첫번째 -->
 <section id="main-first">
 	<div class="size">
 		<p>
@@ -160,6 +161,7 @@
 	<img src="./img/bar1.png" alt="bar1">
 </section>
 
+<!-- 메인 두번째 -->
 <section id="main-second">
 	<div class="size">
 		<div class="home-div">
@@ -184,6 +186,7 @@
 	</div>
 </section>
 
+<!-- 메인 세번째 -->
 <section id="main-third">
 	<div class="size">
 		<div class="third-div">
@@ -266,8 +269,13 @@
 						<option value="1">MAN</option>
 					</select>
 
-					<input type="file" placeholder="프로필 사진 업로드" name="file" >
+					<div>
+						<input type="text" placeholder="프로필 사진 선택" disabled="disabled" class="file-show">
+						<label for="file">업로드</label>
+						<input type="file" name="file" id="file">
 
+					</div>
+					
 					<button>DONE</button>
 				</form>
 			</div>
@@ -278,6 +286,15 @@
 	<img src="./img/bar1.png" alt="register-bar" class="register-bar">
 </section>
 
+<!-- 파일 업로드 이름 바꿔주기 -->
+<script>
+	$("#file").on("change", (e)=>{	
+		var filename = $(e.target).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+		// 추출한 파일명 삽입
+		$(".file-show").val(filename); 
+	});
+</script>
+
 <!-- 로그인 -->
 <section id="main-login">
 	<p>Subscribe to our news <br> and regular updates</p>
@@ -287,3 +304,40 @@
 		<button>LOGIN</button>
 	</form>
 </section>			
+
+<!-- 스크롤탑 설정 -->
+<script>
+	// 홈 이동
+	$(".home").on("click", ()=>{
+		$('html, body').animate({scrollTop: 0}, 1000, 'swing');	
+	});
+	//about 이동
+	$(".about").on("click", ()=>{
+		let top = document.querySelector("#main-first").offsetTop - 70;
+		$('html, body').animate({scrollTop: top}, 1000, 'swing');	
+	});
+	//services 이동
+	$(".services").on("click", ()=>{
+		let top = document.querySelector("#main-second").offsetTop - 70;
+		$('html, body').animate({scrollTop: top}, 1000, 'swing');	
+	});//pages 이동
+	$(".pages").on("click", ()=>{
+		let top = document.querySelector("#main-third").offsetTop - 70;
+		$('html, body').animate({scrollTop: top}, 1000, 'swing');	
+	});
+	// 회원가입 이동
+	$(".register").on("click", ()=>{goregi()});
+	$(".goregi").on("click", ()=>{goregi()});
+	// 로그인 이동
+	$(".login").on("click", ()=>{gologin()});
+	$(".gologin").on("click", ()=>{gologin()});
+
+	function goregi() {
+		let top = document.querySelector("#main-register").offsetTop - 70;
+		$('html, body').animate({scrollTop: top}, 1000, 'swing');
+	}
+	function gologin() {
+		let top = document.querySelector("#main-login").offsetTop - 70;
+		$('html, body').animate({scrollTop: top}, 1000, 'swing');	
+	}
+</script>

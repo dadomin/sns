@@ -14,6 +14,6 @@ class ProfileController extends MasterController {
             exit;
         }
 
-        $this->render("profile", [$user]);
+        $this->render("profile", ["user" => $user]);
     }
 }
