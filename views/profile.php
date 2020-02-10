@@ -79,11 +79,11 @@
             <div class="pop-up-bg">
                 
             </div>
-            <form action="/profilechange" method="POST" class="up change-up">
+            <form action="/profile/change" method="POST" class="up change-up" enctype="multipart/form-data">
                 <h3>프로필 수정</h3>
-                <img src="<?= $user->img ?>" alt="img">
+                <img src="<?= $user->img ?>" alt="img" class="change-img">
                 <label for="change-file" class="change-profile-img"><i class="fas fa-camera"></i></label>
-                <input type="file" id="change-file">
+                <input type="file" id="change-file" name="file">
                 <input type="text" class="change-profile-name" name="nick">
                 <button>확인</button>
             </form>
@@ -97,6 +97,21 @@
         $(".pop-up-bg").on("click", (e)=>{
             let p = e.target.parentNode;
             document.querySelector("body").removeChild(p);
+        });
+
+        // 이미지 그려주기
+        $("#change-file").on("change", (e)=>{
+            let file = e.target.files[0];
+            if(!file.type.match("image.*")) {
+                alert("확장자는 이미지 확장자만 가능합니다.");
+                return;
+            }
+
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                $(".change-img").attr("src", e.target.result);
+            };
+            reader.readAsDataURL(file);
         });
     })
 

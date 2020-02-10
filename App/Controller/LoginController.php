@@ -23,7 +23,7 @@ class LoginController extends MasterController {
         $file = $_FILES['file'];
 
         // 비어있는지 체크
-        if($id == "" || $name == "" || $pass == "" || $cpass == "" || $birth== "" || $sex == "" || $file == "") {
+        if($id == "" || $name == "" || $pass == "" || $cpass == "" || $birth== "" || $sex == "" || $file['name'] == null) {
             DB::msgAndBack("필수입력란이 비어져있습니다. 모든 항목이 필수 입력란입니다.");
             exit;
         }
@@ -57,6 +57,7 @@ class LoginController extends MasterController {
             DB::msgAndBack("비밀번호와 비밀번호 확인란의 값이 다릅니다.");
             exit;
         }
+
         //이미지 파일인지 체크
         if(explode("/", $file['type'])[0] != "image") {
             DB::msgAndBack("이미지 파일만 업로드 가능합니다.");

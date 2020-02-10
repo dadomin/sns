@@ -410,6 +410,7 @@ footer {
 	transform: translate(-50%, -50%);
 	background-color: #fff;
 }
+/* 팝업 - 프로필 수정 */
 .up.change-up {
 	width: 380px;
 	height: 340px;
@@ -425,4 +426,47 @@ footer {
 	top: 60px;
 	left: 50%;
 	transform: translate(-50%);
+}
+.change-profile-img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #b3b3b3;
+	color: #fff;
+	display: block;
+	line-height: 40px;
+	text-align: center;
+	font-size: 21px;
+	cursor: pointer;
+	position: absolute;
+	top: 160px;
+	left: 220px;
+}
+#change-file {
+	display: none;
+}
+.change-profile-name {
+	position: absolute;
+	left: 50%;
+	bottom: 80px;
+	transform: translateX(-50%);
+	height: 36px;
+	width: 80%;
+	padding: 0 16px;
+}
+.change-up > button {
+	background-color: #474e60;
+	border-radius: 4px;
+	width: 110px;
+	height: 40px;
+	border:none;
+	cursor: pointer;
+	color: #fff;
+	position: absolute;
+	left: 50%;
+	bottom: 25px;
+	transform: translateX(-50%);
+}
+.change-up > button:hover {
+	background-color: #383e4c;
 }
