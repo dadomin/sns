@@ -297,7 +297,9 @@ footer {
     font-size: 14px;
     margin-bottom: 20px;
     transition: .25s;
-    cursor: pointer;
+	cursor: pointer;
+	display: block;
+	width: 100%;
 }
 .footer-div > p > .green {
     color: #1fde82;
