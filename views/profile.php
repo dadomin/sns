@@ -32,13 +32,13 @@
                     <div>
                         <span>생일</span>
                         <p><?= dateToString($user->birth) ?></p>
-                        <button>변경</button>
+                        <button class="birth-change">변경</button>
                     </div>
 
                     <div>
                         <span>성별</span>
                         <p><?= sexToString($user->sex) ?></p>
-                        <button>변경</button>
+                        <button class="sex-change">변경</button>
                     </div>
                 </div>
             </div>
@@ -113,6 +113,53 @@
             };
             reader.readAsDataURL(file);
         });
-    })
+    });
+
+    // 생일 변경 
+    $(".birth-change").on("click", ()=>{
+        let div = document.createElement("div");
+        div.id = 'pop-up';
+        let temp = `
+            <div class="pop-up-bg"></div>
+            <form action="/profile/birth-change" method="POST" class="up birth-sex-change">
+                <h3>생일 수정</h3>
+                <input type="date" name="birth">
+                <button>확인</button>
+            </form>
+        `;
+        div.innerHTML = temp;
+
+        $("body").append(div);
+
+        $(".pop-up-bg").on("click", (e)=>{
+            let p = e.target.parentNode;
+            document.querySelector("body").removeChild(p);
+        });
+    });
+
+    // 성별 변경
+    $(".sex-change").on("click", ()=>{
+        let div = document.createElement("div");
+        div.id = 'pop-up';
+        let temp = `
+            <div class="pop-up-bg"></div>
+            <form action="/profile/sex-change" method="POST" class="up birth-sex-change">
+                <h3>성별 수정</h3>
+                <select name="sex">
+                    <option value="0">여자</option>
+                    <option value="1">남자</option>
+                </select>
+                <button>확인</button>
+            </form>
+        `;
+        div.innerHTML = temp;
+
+        $("body").append(div);
+
+        $(".pop-up-bg").on("click", (e)=>{
+            let p = e.target.parentNode;
+            document.querySelector("body").removeChild(p);
+        });
+    });
 
 </script>

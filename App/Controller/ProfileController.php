@@ -123,5 +123,46 @@ class ProfileController extends MasterController {
        $user2 = DB::fetch($sql3, [$user->id]);
        $_SESSION['user'] = $user2;
        DB::msgAndGo("회원정보 수정 완료", "/profile");
-    } 
+    }
+
+    public function birthChange()
+    {   
+        $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+
+        $birth = $_POST['birth'];
+        
+        $sql = "UPDATE `sns_user` SET `birth` = ? WHERE `id` = ?";
+        $cnt = DB::query($sql, [$birth, $user->id]);
+
+        if(!$cnt){
+            DB::msgAndBack("회원정보 수정 실패");
+            exit;
+        }
+
+        $sql3 = "SELECT * FROM `sns_user` WHERE id = ?";
+        $user2 = DB::fetch($sql3, [$user->id]);
+        $_SESSION['user'] = $user2;
+        DB::msgAndGo("회원정보 수정 완료", "/profile");
+    }
+
+    public function sexChange()
+    {
+        $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+
+        $sex = $_POST['sex'];
+        
+        $sql = "UPDATE `sns_user` SET `sex` = ? WHERE `id` = ?";
+        $cnt = DB::query($sql, [$sex, $user->id]);
+
+        if(!$cnt){
+            DB::msgAndBack("회원정보 수정 실패");
+            exit;
+        }
+
+        $sql3 = "SELECT * FROM `sns_user` WHERE id = ?";
+        $user2 = DB::fetch($sql3, [$user->id]);
+        $_SESSION['user'] = $user2;
+        DB::msgAndGo("회원정보 수정 완료", "/profile");
+    }
+
 }
